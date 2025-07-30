@@ -6,8 +6,9 @@ const SingleGadget = ({
   price,
   img,
   quantity,
-  incrementquantity,
-  decrementquantity,
+  onIncrementQuantity,
+  onDecrementQuantity,
+
   removeBtn,
 }) => {
   console.log("img:-", img);
@@ -31,11 +32,17 @@ const SingleGadget = ({
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <button onClick={() => incrementquantity(id)} className="text-blue-600">
+        <button
+          onClick={() => onIncrementQuantity(id)}
+          className="text-blue-600"
+        >
           <ChevronUp className="w-5 h-5" />
         </button>
         <span className="font-medium">{quantity}</span>
-        <button onClick={() => decrementquantity(id)} className="text-blue-600">
+        <button
+          onClick={() => onDecrementQuantity(id)}
+          className="text-blue-600"
+        >
           <ChevronDown className="w-5 h-5" />
         </button>
       </div>
