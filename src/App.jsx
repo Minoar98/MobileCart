@@ -34,9 +34,7 @@ function App() {
 
   const decrementQuantity = (id) => {
     const product = products.find((product) => product.id === id);
-    if (product.quantity === 1
-      
-    ) {
+    if (product.quantity === 1) {
       removeBtn(product.id);
       return;
     }
@@ -65,9 +63,7 @@ function App() {
         <Gadget
           products={products}
           onIncrementQuantity={incrementQuantity}
-          // incrementquantity={incrementquantity}
           onDecrementQuantity={decrementQuantity}
-          // removeBtn={removeBtn}
           removeBtn={removeBtn}
         />
         <div className="max-w-5xl mx-auto px-4 text-lg font-bold border-t border-gray-600 pt-4 flex justify-between">
@@ -75,7 +71,9 @@ function App() {
           <span>${totalCost}</span>
         </div>
 
-        <ClearBtn onClearHandler={clearhandler} />
+        {products.length >= 1 && (
+          <ClearBtn onClearHandler={clearhandler} products={products} />
+        )}
       </main>
     </>
   );

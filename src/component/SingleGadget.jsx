@@ -8,13 +8,11 @@ const SingleGadget = ({
   quantity,
   onIncrementQuantity,
   onDecrementQuantity,
-
   removeBtn,
 }) => {
-  console.log("img:-", img);
   return (
-    <article className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4">
-      <div className="flex gap-4 items-center">
+    <article className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-gray-200 px-4">
+      <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
         <img
           src={img}
           alt={name}
@@ -31,7 +29,7 @@ const SingleGadget = ({
           </button>
         </div>
       </div>
-      <div className="flex flex-col items-center">
+      <div className="flex items-center sm:flex-col gap-2 self-end sm:self-auto">
         <button
           onClick={() => onIncrementQuantity(id)}
           className="text-blue-600"
